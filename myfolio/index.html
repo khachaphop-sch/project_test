@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio นักเรียน ม.3 | ยื่นเข้า ม.4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Prompt', sans-serif;
+      }
+      .bg-primary {
+        background: linear-gradient(135deg, #0f4c81 0%, #3b82f6 100%);
+      }
+      .text-primary {
+        color: #0f4c81;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <div class="min-h-screen">
+      <header class="bg-white/90 border-b border-slate-200 backdrop-blur sticky top-0 z-20">
+        <div class="mx-auto max-w-6xl px-6 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Portfolio สำหรับยื่นเข้า ม.4</p>
+            <h1 class="text-2xl md:text-3xl font-semibold text-primary">นิสิต ม.3 | ยินดีต้อนรับ</h1>
+          </div>
+          <nav class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+            <a href="#hero" class="hover:text-primary">แนะนำตัว</a>
+            <a href="#education" class="hover:text-primary">การศึกษา</a>
+            <a href="#activities" class="hover:text-primary">กิจกรรม</a>
+            <a href="#goals" class="hover:text-primary">เป้าหมาย</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-6xl px-6 py-10">
+        <section id="hero" class="grid gap-10 lg:grid-cols-[1.3fr_1fr] items-center">
+          <div class="space-y-6">
+            <p class="inline-flex items-center rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700">ม.3 สาย วิทย์-คณิต</p>
+            <h2 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">สวัสดีครับ ผม [ชื่อ-นามสกุล]</h2>
+            <p class="max-w-xl text-slate-600">ผมเป็นนักเรียน ม.3 ที่สนใจสายวิทย์-คณิต มีผลงานโครงงานคอมพิวเตอร์และกิจกรรมเพื่อสังคมที่ช่วยฝึกทักษะการวิเคราะห์ จัดการ และนำเสนอได้อย่างเป็นระบบ</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#activities" class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/10 transition hover:-translate-y-0.5">ชมผลงาน</a>
+              <a href="#contact" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">ติดต่อผม</a>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-white p-4 shadow-lg shadow-slate-200/80">
+            <img class="h-full w-full rounded-3xl object-cover" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="นักเรียนกำลังศึกษา" />
+          </div>
+        </section>
+
+        <section id="education" class="mt-20 rounded-3xl bg-white p-8 shadow-lg shadow-slate-200/60">
+          <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.2em] text-slate-500">Section 2</p>
+              <h3 class="text-3xl font-semibold text-slate-900">การศึกษา &amp; GPAX</h3>
+            </div>
+            <div class="rounded-3xl bg-blue-50 px-4 py-3 text-sm font-medium text-blue-700">GPAX ปัจจุบัน 3.90</div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <h4 class="text-xl font-semibold text-slate-900">โรงเรียนปัจจุบัน</h4>
+              <p class="text-slate-600">โรงเรียนตัวอย่างวิทยาศาสตร์ กรุงเทพฯ</p>
+              <p class="text-slate-600">ชั้น ม.3 ห้องเรียนวิทย์-คณิต</p>
+              <p class="text-slate-600">เกรดเฉลี่ยสะสม: 3.90</p>
+            </div>
+            <div class="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <h4 class="text-xl font-semibold text-slate-900">ทักษะเด่น</h4>
+              <ul class="space-y-3 text-slate-600">
+                <li>• คณิตศาสตร์และวิทยาศาสตร์พื้นฐานแน่น</li>
+                <li>• เขียนโปรแกรม Python เบื้องต้น</li>
+                <li>• สื่อสารภาษาอังกฤษสำหรับงานศึกษา</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="activities" class="mt-20">
+          <div class="mb-8">
+            <p class="text-sm uppercase tracking-[0.2em] text-slate-500">Section 3</p>
+            <h3 class="text-3xl font-semibold text-slate-900">กิจกรรม &amp; ผลงาน</h3>
+            <p class="max-w-2xl text-slate-600">เลือกผลงานและกิจกรรมที่แสดงถึงการร่วมมือ ความคิดสร้างสรรค์ และความตั้งใจในการเรียนรู้</p>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/40">
+              <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="โครงงาน STEM" />
+              <h4 class="mt-5 text-xl font-semibold text-slate-900">โครงงาน STEM</h4>
+              <p class="mt-3 text-slate-600">สร้างโครงงานหุ่นยนต์ควบคุมด้วยเซนเซอร์ เพื่อฝึกการวิเคราะห์ปัญหาและการเขียนโปรแกรม</p>
+            </article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/40">
+              <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1519455953755-af066f52f1d8?auto=format&fit=crop&w=900&q=80" alt="กิจกรรมจิตอาสา" />
+              <h4 class="mt-5 text-xl font-semibold text-slate-900">กิจกรรมจิตอาสา</h4>
+              <p class="mt-3 text-slate-600">เข้าร่วมกิจกรรมปลูกต้นไม้และบริจาคหนังสือเพื่อชุมชน สะท้อนความใส่ใจต่อสังคม</p>
+            </article>
+            <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/40">
+              <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="ผลงานนำเสนอ" />
+              <h4 class="mt-5 text-xl font-semibold text-slate-900">ผลงานนำเสนอ</h4>
+              <p class="mt-3 text-slate-600">นำเสนอโปรเจ็กต์วิทยาศาสตร์หน้าเสาธง ใช้ข้อมูลสรุปอย่างชัดเจน ทำให้ได้รับคำชมจากครูและเพื่อน</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="goals" class="mt-20 rounded-3xl bg-gradient-to-r from-sky-50 via-white to-blue-50 p-8 shadow-lg shadow-slate-200/60">
+          <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] items-center">
+            <div class="space-y-5">
+              <p class="text-sm uppercase tracking-[0.2em] text-slate-500">Section 4</p>
+              <h3 class="text-3xl font-semibold text-slate-900">เป้าหมายในอนาคต</h3>
+              <p class="text-slate-600">ผมต้องการเรียนต่อสายวิทย์-คณิต เพื่อศึกษาวิทยาศาสตร์และเทคโนโลยีอย่างลึกซึ้ง และพัฒนาทักษะด้านการแก้ปัญหาเชิงระบบสำหรับอนาคต</p>
+              <ul class="space-y-3 text-slate-600">
+                <li>• เรียนรู้ได้ดีในวิชาฟิสิกส์ เคมี และคณิตศาสตร์</li>
+                <li>• สนใจพัฒนาทักษะการเขียนโปรแกรมและหุ่นยนต์</li>
+                <li>• อยากมีส่วนร่วมในกิจกรรมที่สร้างสรรค์และเป็นประโยชน์</li>
+              </ul>
+            </div>
+            <div id="contact" class="rounded-3xl border border-slate-200 bg-white p-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-slate-500">ติดต่อ</p>
+              <h4 class="mt-4 text-2xl font-semibold text-slate-900">ติดต่อเพื่อสอบถามเพิ่มเติม</h4>
+              <div class="mt-6 space-y-4 text-slate-600">
+                <div>
+                  <p class="font-semibold text-slate-800">อีเมล</p>
+                  <p>email@example.com</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800">โทรศัพท์</p>
+                  <p>08x-xxx-xxxx</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800">Line</p>
+                  <p>@username</p>
+                </div>
+              </div>
+              <a href="mailto:email@example.com" class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">ส่งเมลหาเรา</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="border-t border-slate-200 bg-white py-6">
+      <div class="mx-auto max-w-6xl px-6 text-center text-sm text-slate-500">เว็บไซต์ Portfolio ตัวอย่างสำหรับนักเรียน ม.3 สายวิทย์-คณิต | ปรับแก้ข้อความและรูปภาพได้ตามต้องการ</div>
+    </footer>
+  </body>
+</html>
