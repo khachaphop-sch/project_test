@@ -13,6 +13,15 @@
         font-family: 'Prompt', sans-serif;
         background: radial-gradient(circle at top, rgba(96,165,250,0.18), transparent 22%), linear-gradient(180deg, #050816 0%, #0b1226 100%);
       }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at 20% 15%, rgba(99,102,241,0.16), transparent 18%), radial-gradient(circle at 80% 10%, rgba(59,130,246,0.12), transparent 12%), radial-gradient(circle at 40% 80%, rgba(139,92,246,0.1), transparent 20%);
+        pointer-events: none;
+        z-index: -1;
+        animation: pulseGlow 18s ease-in-out infinite;
+      }
       .bg-primary {
         background: linear-gradient(135deg, #5b21b6 0%, #2563eb 100%);
       }
@@ -21,6 +30,55 @@
       }
       .text-secondary {
         color: #c7d2fe;
+      }
+      .floating-card {
+        animation: float 8s ease-in-out infinite;
+      }
+      .animate-fade {
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+      }
+      .glow-button {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .glow-button:hover {
+        box-shadow: 0 18px 35px rgba(96, 165, 250, 0.2);
+        transform: translateY(-2px) scale(1.02);
+      }
+      .star-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .star-overlay span {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background: rgba(255,255,255,0.8);
+        opacity: 0.8;
+        animation: twinkle 3s ease-in-out infinite;
+      }
+      .star-overlay span:nth-child(2) { left: 15%; top: 20%; animation-delay: 0.4s; }
+      .star-overlay span:nth-child(3) { left: 75%; top: 10%; animation-delay: 0.7s; }
+      .star-overlay span:nth-child(4) { left: 55%; top: 70%; animation-delay: 1.2s; }
+      .star-overlay span:nth-child(5) { left: 30%; top: 45%; animation-delay: 0.9s; }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 1; }
+      }
+      @keyframes twinkle {
+        0%, 100% { transform: scale(0.9); opacity: 0.7; }
+        50% { transform: scale(1.2); opacity: 1; }
       }
     </style>
   </head>
@@ -42,17 +100,24 @@
       </header>
 
       <main class="mx-auto max-w-6xl px-6 py-10">
-        <section id="hero" class="grid gap-10 lg:grid-cols-[1.3fr_1fr] items-center">
-          <div class="space-y-6">
+        <section id="hero" class="relative grid gap-10 lg:grid-cols-[1.3fr_1fr] items-center">
+          <div class="space-y-6 animate-fade">
             <p class="inline-flex items-center rounded-full bg-violet-100/10 px-4 py-1 text-sm font-medium text-violet-200">ม.3 สาย วิทย์-คณิต</p>
             <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">สวัสดีครับ ผม [ชื่อ-นามสกุล]</h2>
             <p class="max-w-xl text-slate-300">ผมเป็นนักเรียน ม.3 ที่สนใจสายวิทย์-คณิต มีผลงานโครงงานคอมพิวเตอร์และกิจกรรมเพื่อสังคมที่ช่วยฝึกทักษะการวิเคราะห์ จัดการ และนำเสนอได้อย่างเป็นระบบ</p>
             <div class="flex flex-wrap gap-4">
-              <a href="#activities" class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-800/40 transition hover:-translate-y-0.5">ชมผลงาน</a>
-              <a href="#contact" class="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-950 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:bg-slate-800">ติดต่อผม</a>
+              <a href="#activities" class="glow-button inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-800/40">ชมผลงาน</a>
+              <a href="#contact" class="glow-button inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-950 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:bg-slate-800">ติดต่อผม</a>
             </div>
           </div>
-          <div class="rounded-3xl bg-slate-900 p-4 shadow-2xl shadow-slate-950/60">
+          <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-4 shadow-2xl shadow-slate-950/60 floating-card">
+            <div class="star-overlay">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <img class="h-full w-full rounded-3xl object-cover" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80" alt="ท้องฟ้าอวกาศ" />
           </div>
         </section>
@@ -90,17 +155,17 @@
             <p class="max-w-2xl text-slate-300">เลือกผลงานและกิจกรรมที่แสดงถึงการร่วมมือ ความคิดสร้างสรรค์ และความตั้งใจในการเรียนรู้</p>
           </div>
           <div class="grid gap-6 lg:grid-cols-3">
-            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40">
+            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40 animate-fade" style="animation-delay: 0.1s;">
               <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80" alt="โครงงาน STEM" />
               <h4 class="mt-5 text-xl font-semibold text-white">โครงงาน STEM</h4>
               <p class="mt-3 text-slate-300">สร้างโครงงานหุ่นยนต์ควบคุมด้วยเซนเซอร์ เพื่อฝึกการวิเคราะห์ปัญหาและการเขียนโปรแกรม</p>
             </article>
-            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40">
+            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40 animate-fade" style="animation-delay: 0.2s;">
               <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80" alt="กิจกรรมจิตอาสา" />
               <h4 class="mt-5 text-xl font-semibold text-white">กิจกรรมจิตอาสา</h4>
               <p class="mt-3 text-slate-300">เข้าร่วมกิจกรรมปลูกต้นไม้และบริจาคหนังสือเพื่อชุมชน สะท้อนความใส่ใจต่อสังคม</p>
             </article>
-            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40">
+            <article class="rounded-3xl border border-slate-800 bg-slate-950 p-6 shadow-sm shadow-slate-950/40 animate-fade" style="animation-delay: 0.3s;">
               <img class="h-44 w-full rounded-2xl object-cover" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80" alt="ผลงานนำเสนอ" />
               <h4 class="mt-5 text-xl font-semibold text-white">ผลงานนำเสนอ</h4>
               <p class="mt-3 text-slate-300">นำเสนอโปรเจ็กต์วิทยาศาสตร์หน้าเสาธง ใช้ข้อมูลสรุปอย่างชัดเจน ทำให้ได้รับคำชมจากครูและเพื่อน</p>
